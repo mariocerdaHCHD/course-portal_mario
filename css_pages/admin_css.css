@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(250, 253, 247);
+}
+img{
+    height:100px;
+    width:100px;
+    padding:10px;
+}
+/* classes */
+.header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.main{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+/* ids */
+#welcome_user{
+    font-size:25pt;
+    font-weight:bold;
+}
