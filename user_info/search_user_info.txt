@@ -1,0 +1,7 @@
+first_name,last_name,employee_id,tier,taken,need
+John,Doe,001,2,True,False
+Alice,Smith,002,1,False,True
+Bob,Johnson,003,3,True,True
+Sara,Miller,004,2,False,False
+Mike,Williams,005,1,True,False
+Emily,Jones,006,3,True,True

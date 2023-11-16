@@ -23,7 +23,7 @@
                 $row = 0;
                 $columns = 1;
                 
-                if (($handle = fopen("training.csv", "r")) !== FALSE) {
+                if (($handle = fopen("C:\phpe_info\\training.csv", "r")) !== FALSE) {
                     while (($data = fgetcsv($handle, 500, ",")) !== FALSE) {
                         $num = count($data);
                         //echo "<p> $num fields in line $row: <br /></p>\n";

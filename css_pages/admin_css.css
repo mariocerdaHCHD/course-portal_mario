@@ -23,3 +23,13 @@ img{
     font-size:25pt;
     font-weight:bold;
 }
+
+table {      
+    border-collapse: collapse; 
+    border: none; 
+    margin: 25px auto;
+    width:auto;
+    /* left:120px; */
+}	
+
+th, td { border: 1px solid #ddd; padding: 4px; 	}

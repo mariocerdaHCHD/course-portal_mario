@@ -25,17 +25,30 @@
                 <tr>
                     <td>
                         <label for="last_name">Employee Last Name</label>
-                        <input type="text" name="last_name">
+                        <input type="text" name="last_name" id="last_name" onkeyup="searchUser(this.id)">
+                    </td>
+                    <td>
+                        <label for="last_name">Employee First Name</label>
+                        <input type="text" name="last_name" id="first_name" onkeyup="searchUser(this.id)">
                     </td>
                     <td>
                         <label for="county_id">Employee ID</label>
-                        <input type="text" name="county_id">
+                        <input type="text" name="county_id" id="county_id" onkeyup="searchUser(this.id)">
                     </td>
                 </tr> 
             </table>
         </form>
         <!-- employee info -->
-        <table id="emp_info"></table>
+        <table >
+            <tr>
+                <th>Employee Name</th>
+                <th>Position Title</th>
+                <th>Employee Tier</th>
+                <th>Employee ID</th>
+            </tr>
+            <tbody id="emp_info"></tbody>
+        </table>
     </div>
+    <?php include "indexJS.php"; ?>
 </body>
 </html>
