@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(250, 253, 247);
+    width:100%;
+}
+img{
+    height:100px;
+    width:100px;
+    padding:10px;
+}
+/* classes */
+.header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.main{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+/* tag names */
+table {      
+    border-collapse: collapse; 
+    border: none; 
+    margin: 25px auto;
+    width:auto;
+    /* left:120px; */
+}	
+
+th, td { border: 1px solid #ddd; padding: 4px; 	}
+
+.user_courses{
+    display:flex !important;
+    flex-direction: row !important;
+}
+.user_courses table{
+    margin:10px;
+    padding:10px;
+}
