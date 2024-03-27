@@ -2,17 +2,15 @@
 namespace App\Controller;
 session_start();
 use App\Models\Database;
+$path = $_SERVER["DOCUMENT_ROOT"];
 include "../../Models/Database.php";
 include "../../../include/conn.php";
-include "../../Routes/web.php";
+include $path . "/course_portal/app/assets/funcs/index.php";
 //employee ID update:instead of employee ID use table id of row
 if( !empty($_GET["id"]) ){
     $id = htmlspecialchars($_GET["id"]);
-}else if(!empty($_SESSION["id"]) ){
-    $id = $_SESSION["id"];
 }else{
-    $_SESSION["id"] = "";
-    $router->routeRequest("/logout");
+    $id = user_check($_SESSION["id"]);
 }
 //$_SESSION["id"] = htmlspecialchars($_GET["id"]) ?? '';
 if(!empty($id)){

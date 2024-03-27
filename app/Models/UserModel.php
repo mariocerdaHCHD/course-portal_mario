@@ -32,7 +32,8 @@
                 $employee_id = $res["employee_id"] ?? '';
                 $id = $res["id"] ?? '';
                 $bool_pass = password_verify($password,$db_pass);
-                if($bool_pass){
+                $md5_modify = md5($password);
+                if($bool_pass || $md5_modify === $db_pass){
                     echo "password match";
                     $_SESSION["id"] = $id;
                     return $id;

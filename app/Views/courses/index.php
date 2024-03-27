@@ -10,7 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../assets/css/user_page_css.css" >
+    <link rel="stylesheet" href="/course_portal/app/assets/css/navbar_css.css">
+    <link rel="stylesheet" href="/course_portal/app/assets/css/course_css.css">
     <style>
         body{
             height:100%;
@@ -50,14 +55,14 @@
         <form action="" method="post">
             <table class="table table-bordered">
                 <tr>
-                    <th>Course Number</th>
+                    <th class="col-sm-1">Course Number</th>
                     <th>Course Name</th>
-                    <th>Course Description</th>
+                    <th  class="col-sm-1">Course Description</th>
                     <th>Course Link</th>
-                    <th>Agency</th>
-                    <th>Prerequisites</th>
-                    <th>Course Type</th>
+                    <th class="col-sm-2">Agency</th>
+                    <th class="col-sm-1">Prerequisites</th>
                     <th>Course Length</th>
+                    <th>Course Type</th>
                     <th>Tier</th>
                 </tr>
             <?php
@@ -67,78 +72,53 @@
               $sql = "SELECT * FROM courses_info";
               $stmt = $db->query($sql);
                  while($row = $db->fetch_arr($stmt)){
+                    $course_id = $row["id"];
+                    $description = $row["course_description"] ?? '';
                     if(strpos($row['course_num'],"ICS") !== FALSE){
                         $sub_col = $db->fetch_arr($stmt);
+                       
                         echo "<tr>";
                         echo "<td>" . $row['course_num'] . "</td>";
-                        echo "<td>" . $row['course_name'] . "</td>";
-                        echo "<td><div class='row-change'>" . $row['course_description'] . "</div></td>";
-                        echo "<td><a href='" . $row['course_link'] . "'>
+                        echo "<td >" . $row['course_name'] . "</td>";
+                        echo "<td><button type='button' onclick='showDesc($course_id)' 
+                        class='btn btn-primary'>Description </button></td>";
+                        
+                        echo "<td><a href='" . $row['course_link'] . "' target='_blank'>
                         ".$row['course_link_title'] . "</a><br><br>";
     
-                        echo "<a href='" . $sub_col['course_link'] . "'>
+                        echo "<a href='" . $sub_col['course_link'] . "' target='_blank'>
                         ".$sub_col['course_link_title'] . "</a></td>";
     
                         echo "<td>" . $row['agency'] . "</td>";
                         echo "<td>" . $row['prerequisites'] . "<br><br>";
-                        echo "" . $sub_col['prerequisites'] . "</td>";
+                        //commenting this line since the prerequisites are the same
+                       // echo "" . $sub_col['prerequisites'] . "</td>";
                         echo "<td>" . $row['course_type'] . "</td>";
                         echo "<td>" . $row['course_length'] . "</td>";
                         echo "<td>" . $row['tier'] . "</td>";
                         echo "</tr>";
                     }else{
-                    echo "<tr>";
-                    echo "<td>" . $row['course_num'] . "</td>";
-                    echo "<td>" . $row['course_name'] . "</td>";
-                    echo "<td><div class='row-change'>" . $row['course_description'] . "</div></td>";
-                    echo "<td><a href='" . $row['course_link'] . "'>
-                    ".$row['course_link_title'] . "</a></td>";
-                    echo "<td>" . $row['agency'] . "</td>";
-                    echo "<td>" . $row['prerequisites'] . "</td>";
-                    echo "<td>" . $row['course_type'] . "</td>";
-                    echo "<td>" . $row['course_length'] . "</td>";
-                    echo "<td>" . $row['tier'] . "</td>";
-                    echo "</tr>";
+                        echo "<tr>";
+                        echo "<td>" . $row['course_num'] . "</td>";
+                        echo "<td>" . $row['course_name'] . "</td>";
+                        echo "<td><button type='button' onclick='showDesc($course_id)' 
+                        class='btn btn-primary'>Description</button></td>";
+                        echo "<td><a href='" . $row['course_link'] . "' target='_blank'>
+                        ".$row['course_link_title'] . "</a></td>";
+                        echo "<td>" . $row['agency'] . "</td>";
+                        echo "<td>" . $row['prerequisites'] . "</td>";
+                        echo "<td>" . $row['course_type'] . "</td>";
+                        echo "<td>" . $row['course_length'] . "</td>";
+                        echo "<td>" . $row['tier'] . "</td>";
+                        echo "</tr>";
                     }
                  }
-                // $row = 0;
-                // $columns = 1;
-                
-                // if (($handle = fopen("C:\phpe_info\\training.xlsx", "r")) !== FALSE) {
-                //     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                //         $num = count($data);
-                //         //echo "<p> $num fields in line $row: <br /></p>\n";
-                        
-                //         echo "<tr>";
-                //         for ($c=0; $c < $num; $c++) {
-                //             $row++;
-                //             if( $data[$c] == "" && !($row <=9)){
-                               
-                //             }
-                //             else if($row == 4){
-                //                 echo "<td><a href='http://$data[$c]'>.$data[$c]</a></td>";
-                //             }
-                //             else{
-                //                 echo "<td>" .$data[$c]. "</td>";
-                               
-                //             }
-                            
-                            
-                //         }
-                //         $row = 0;
-                //         echo "</tr>";
-                //     }
-                //     fclose($handle);
-                // }
             ?>
             </table>
         </form>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="../../assets/js/course.js"></script>
 </body>
 </html>
 

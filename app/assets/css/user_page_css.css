@@ -1,3 +1,6 @@
+/* tag names */
+
+
 body{
     background-color: rgb(250, 253, 247);
     width:100%;
@@ -7,6 +10,17 @@ img{
     width:100px;
     padding:10px;
 }
+table {      
+    border-collapse: collapse; 
+    border: none; 
+    margin: 25px auto;
+    width:auto;
+}	
+
+th, td { 
+    border: 1px solid #ddd; padding: 4px; 	
+    text-align:center;
+}
 /* classes */
 .header{
     display:flex;
@@ -14,23 +28,9 @@ img{
     align-items:center;
 }
 .main{
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
+    display:block;
     width:100%;
 }
-/* tag names */
-table {      
-    border-collapse: collapse; 
-    border: none; 
-    margin: 25px auto;
-    width:auto;
-    /* left:120px; */
-}	
-
-th, td { border: 1px solid #ddd; padding: 4px; 	}
-
 .user_courses{
     display:flex !important;
     flex-direction: row !important;

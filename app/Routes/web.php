@@ -4,7 +4,9 @@ use App\Controllers\AdminController;
 use App\Controllers\HomeController;
 use App\Routes\Route;
 require_once 'Route.php';
-include 'C:/xampp/htdocs/course_portal/app/Controllers/HomeController.php';
+$path = $_SERVER["DOCUMENT_ROOT"];
+//commented this line since it was giving an error about having duplicate HomeController class
+//include $path . '/course_portal/app/Controllers/HomeController.php';
 $router = new Route();
 //home route
 $router->add('/login','HomeController','index');

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="#"><img src="/course_portal/img/hc.png" alt="Hidalgo County Health and Human Services Department"></a>
   <!-- Toggler/collapsibe Button -->
@@ -9,21 +9,24 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" id="user_page" href="/course_portal/app/Views/user/">Home</a>
+        <a class="nav-link text-white" id="user_page" href="/course_portal/app/Views/user/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="add_certificate" href="/course_portal/app/Views/training_plan/">Training Plan</a>
+        <a class="nav-link text-white" id="add_certificate" href="/course_portal/app/Views/training_plan/">Training Plan</a>
         <!-- <div class="nav-link" id="training_plan">Training Plan</div> -->
         <!-- href="/course_portal/app/Views/training_plan/" -->
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="add_certificate" href="/course_portal/app/Views/training_certificate/">Add Certificate</a>
+        <a class="nav-link text-white" id="add_certificate" href="/course_portal/app/Views/training_certificate/">Add Certificate</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="course_catalog" href="/course_portal/app/Views/courses/">Course Catalog</a>
+        <a class="nav-link text-white" id="add_certificate" href="/course_portal/app/Views/transcript/">Transcript</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="logout" href="/course_portal/include/logout.php/">Logout</a>
+        <a class="nav-link text-white" id="course_catalog" href="/course_portal/app/Views/courses/">Course Catalog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" id="logout" href="/course_portal/include/logout.php/">Logout</a>
       </li>
     </ul>
   </div>
